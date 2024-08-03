@@ -1,0 +1,30 @@
+﻿obj/
+bin/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# Rider (yea baby!)
+.idea/
+.idea_modules/
+.idea.js
+.idea.kts
+.idea.html
+.idea.modules
+.idea_cache/
+.idea_config/
+.idea_workspace/
+.idea_settings/
+.idea_modules_logs/
+.idea_modules_projects/
+.idea_modules_index/
+.idea_modules_tasks/
+.idea_modules_project_config/
+*.csproj.DotSettings
