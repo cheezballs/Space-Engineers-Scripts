@@ -50,7 +50,6 @@ namespace Indoors.SpaceEngineers.Inventory.GridCargoDetails
 
             double totalVolume = 0;
             double usedVolume = 0;
-            double totalMass = 0;
             double usedMass = 0;
             
             foreach (var block in allBlocks)
@@ -98,6 +97,7 @@ namespace Indoors.SpaceEngineers.Inventory.GridCargoDetails
 
             var summary = new StringBuilder();
             summary.AppendLine("Materials Summary:");
+            summary.AppendLine();
             foreach (var kvp in materialAmounts)
             {
                 summary.AppendLine(kvp.Key + ": " + (int)kvp.Value);
@@ -108,6 +108,7 @@ namespace Indoors.SpaceEngineers.Inventory.GridCargoDetails
             
             summary = new StringBuilder();
             summary.AppendLine("Components Summary:");
+            summary.AppendLine();
             foreach (var kvp in componentAmounts)
             {
                 summary.AppendLine(kvp.Key + ": " + (int)kvp.Value);
@@ -117,10 +118,10 @@ namespace Indoors.SpaceEngineers.Inventory.GridCargoDetails
             
             summary = new StringBuilder();
             summary.AppendLine("Misc Statistics:");
-            summary.AppendLine("Available Storage Mass: " + totalMass);
-            summary.AppendLine("Consumed Storage Mass: " + usedMass);
-            summary.AppendLine("Available Storage Volume: " + totalVolume);
-            summary.AppendLine("Consumed Storage Volume: " + usedVolume);
+            summary.AppendLine();
+            summary.AppendLine($"Available Storage Volume: {(int)totalVolume}L");
+            summary.AppendLine($"Consumed Storage Volume: {(int)usedVolume}L");
+            summary.AppendLine($"Storage is {(int)(usedVolume / totalVolume * 100)}% full.");
             miscLCD.ContentType = ContentType.TEXT_AND_IMAGE;
             miscLCD.WriteText(summary.ToString());
             
